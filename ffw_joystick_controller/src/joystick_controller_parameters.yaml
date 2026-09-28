@@ -1,0 +1,160 @@
+joystick_controller:
+  joystick_sensors: {
+    type: string_array,
+    default_value: [],
+    description: "Joystick sensor names to read from",
+    read_only: true,
+    validation: {
+      unique<>: null,
+    }
+  }
+  state_interfaces: {
+    type: string_array,
+    default_value: ["JOYSTICK X VALUE", "JOYSTICK Y VALUE", "JOYSTICK TACT SWITCH"],
+    description: "State interfaces provided by the hardware for Joystick sensors",
+    read_only: true,
+  }
+  sensorxel_l_joy_reverse_interfaces: {
+    type: string_array,
+    default_value: [],
+    description: "List of state interfaces to reverse after normalization",
+    read_only: true,
+  }
+  sensorxel_r_joy_reverse_interfaces: {
+    type: string_array,
+    default_value: [],
+    description: "List of state interfaces to reverse after normalization",
+    read_only: true,
+  }
+  joystick_calibration_min: {
+    type: double,
+    default_value: 0.0,
+    description: "Minimum ADC value (0)",
+    read_only: true
+  }
+  joystick_calibration_center: {
+    type: double,
+    default_value: 2048.0,
+    description: "Center ADC value (2048)",
+    read_only: true
+  }
+  joystick_calibration_max: {
+    type: double,
+    default_value: 4096.0,
+    description: "Maximum ADC value (4096)",
+    read_only: true
+  }
+  sensorxel_l_joy_controlled_joints: {
+    type: string_array,
+    default_value: [],
+    description: "List of joints to control with Joystick",
+    read_only: true
+  }
+  sensorxel_r_joy_controlled_joints: {
+    type: string_array,
+    default_value: [],
+    description: "List of joints to control with Joystick",
+    read_only: true
+  }
+  joint_states_topic: {
+    type: string,
+    default_value: "/joint_states",
+    description: "Topic to subscribe for joint states",
+    read_only: true
+  }
+  sensorxel_l_joy_joint_trajectory_topic: {
+    type: string,
+    default_value: "~/joint_trajectory",
+    description: "Topic to publish joint trajectory commands",
+    read_only: true
+  }
+  sensorxel_r_joy_joint_trajectory_topic: {
+    type: string,
+    default_value: "~/joint_trajectory",
+    description: "Topic to publish joint trajectory commands",
+    read_only: true
+  }
+  sensorxel_l_joy_joint_states_stamped_topic: {
+    type: string,
+    default_value: "",
+    description: "Topic to publish stamped joint states for the left joystick. If empty, derive from the joint trajectory topic.",
+    read_only: true
+  }
+  sensorxel_r_joy_joint_states_stamped_topic: {
+    type: string,
+    default_value: "",
+    description: "Topic to publish stamped joint states for the right joystick. If empty, derive from the joint trajectory topic.",
+    read_only: true
+  }
+  sensorxel_l_joy_jog_scale: {
+    type: double,
+    default_value: 0.1,
+    description: "Scale factor for jog commands",
+    read_only: true
+  }
+  sensorxel_r_joy_jog_scale: {
+    type: double,
+    default_value: 0.1,
+    description: "Scale factor for jog commands",
+    read_only: true
+  }
+  deadzone: {
+    type: double,
+    default_value: 0.05,
+    description: "Deadzone around center position [0.0, 1.0)",
+    read_only: false
+  }
+  long_press_duration: {
+    type: double,
+    default_value: 2.0,
+    description: "Duration in seconds to trigger long press event",
+    read_only: true
+  }
+  enable_randomization: {
+    type: bool,
+    default_value: true,
+    description: "Enable random offsets on recording finish events",
+    read_only: false
+  }
+  action_event_topic: {
+    type: string,
+    default_value: "/task/action_event",
+    description: "Topic to receive recording action events",
+    read_only: true
+  }
+  head_random_range: {
+    type: double_array,
+    default_value: [-0.00, 0.00],
+    description: "Head joint random offset range",
+    read_only: true
+  }
+  lift_random_range: {
+    type: double_array,
+    default_value: [-0.02, 0.02],
+    description: "Lift joint random offset range",
+    read_only: true
+  }
+  cmd_vel_linear_x_random_range: {
+    type: double_array,
+    default_value: [-0.05, 0.05],
+    description: "cmd_vel linear.x random offset range",
+    read_only: true
+  }
+  cmd_vel_linear_y_random_range: {
+    type: double_array,
+    default_value: [-0.1, 0.1],
+    description: "cmd_vel linear.y random offset range",
+    read_only: true
+  }
+  cmd_vel_angular_z_random_range: {
+    type: double_array,
+    default_value: [-0.1, 0.1],
+    description: "cmd_vel angular.z random offset range",
+    read_only: true
+  }
+  random_duration: {
+    type: double,
+    default_value: 1.0,
+    description: "Seconds to interpolate joint offsets and pulse cmd_vel offsets",
+    read_only: true
+  }

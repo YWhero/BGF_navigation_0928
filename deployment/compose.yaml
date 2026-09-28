@@ -1,0 +1,22 @@
+services:
+  navigation:
+    build:
+      context: ..
+      network: none
+      dockerfile: deployment/Dockerfile
+    image: bgf-navigation:pre-exact-goal-0928
+    container_name: bgf_navigation_0928
+    network_mode: host
+    ipc: host
+    privileged: true
+    init: true
+    environment:
+      ROS_DOMAIN_ID: ${ROS_DOMAIN_ID:-30}
+      RMW_IMPLEMENTATION: rmw_zenoh_cpp
+      MAP_NAME: ${MAP_NAME:-bgf_0923_3}
+      DISPLAY: ${DISPLAY:-}
+      QT_X11_NO_MITSHM: '1'
+    volumes:
+      - /dev:/dev
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    stop_grace_period: 15s

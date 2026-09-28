@@ -1,0 +1,25 @@
+{
+  "snapshot": "before-exact-goal-and-yaw-tuning",
+  "date": "2026-09-28",
+  "robot": "SH5 / 1109",
+  "upstream_commit": "21bebbb968fea3364f513191ff25c48d1c3856f5",
+  "base_image": "robotis/ai-worker@sha256:cb3e246ec73fa1593d9940bae3d38ba6676d6c0419e0ce479b0ba945a26ca5fb",
+  "nav2_mppi_version": "1.3.11-1noble.20260412.222537",
+  "nav2_smac_version": "1.3.11-1noble.20260412.221911",
+  "dual_laser_merger_source_commit": "e354b5f289ae579422a3fcd0495df17fc5dc27ab",
+  "lakibeam_driver_source_commit": "248a0cc4111e613bd9975e287371d58a3c3a3b0d",
+  "baseline_yaml_sha256": "2b6ac2317d156adc2057d5baf9876c7004f49494947615beb9cebd930210273d",
+  "drive_binary_build_date": "2026-05-15",
+  "rebuild_packages": [
+    "ffw_description",
+    "ffw_robot_state_publisher",
+    "robotis_hand_pressure_broadcaster",
+    "ffw_bringup",
+    "ffw_navigation"
+  ],
+  "do_not_rebuild_for_binary_reproduction": [
+    "ffw_swerve_drive_controller"
+  ],
+  "scope": "tracked upstream tree plus selected SH5 bringup/description/navigation changes; no live workspace history, logs, datasets or credentials",
+  "swerve_library_sha256": "a7dfbe4d0ad2662c8588688bed4a32ab5600505581d92c074910c529fd0043a8"
+}

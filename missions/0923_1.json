@@ -1,0 +1,89 @@
+{
+  "global_bt": "global.xml",
+  "map_name": "bgf_0923_3",
+  "metadata": {
+    "behavior_node_count": 0,
+    "mission_flow": {
+      "edges": [
+        {
+          "id": "mission_flow_Waypoint_2_b291e269_Waypoint_1_9e5e91b7",
+          "source": "Waypoint_2_b291e269",
+          "target": "Waypoint_1_9e5e91b7"
+        },
+        {
+          "id": "mission_flow_Waypoint_1_9e5e91b7_Waypoint_2_b291e269",
+          "source": "Waypoint_1_9e5e91b7",
+          "target": "Waypoint_2_b291e269"
+        }
+      ],
+      "nodes": [
+        {
+          "id": "Waypoint_1_9e5e91b7",
+          "position": {
+            "x": 300,
+            "y": 72
+          }
+        },
+        {
+          "id": "Waypoint_2_b291e269",
+          "position": {
+            "x": 520,
+            "y": 72
+          }
+        }
+      ]
+    },
+    "source": "mission_canvas"
+  },
+  "mission_name": "0923_1",
+  "revision": 11,
+  "schema_version": 2,
+  "waypoints": [
+    {
+      "id": "Waypoint_1_9e5e91b7",
+      "label": "Waypoint 1",
+      "local_bt": "locals/waypoint_1/main.xml",
+      "local_bt_files": [
+        "locals/waypoint_1/main.xml"
+      ],
+      "metadata": {
+        "coordinate_space": "map",
+        "linked_bt_tree": "locals/waypoint_1/main.xml",
+        "local_bt": "locals/waypoint_1/main.xml",
+        "local_bt_files": [
+          "locals/waypoint_1/main.xml"
+        ],
+        "source": "mission_canvas"
+      },
+      "pose": {
+        "frame_id": "map",
+        "x": 0.2756002592162309,
+        "y": -0.11034703564369908,
+        "yaw": -0.30791445360386877
+      }
+    },
+    {
+      "id": "Waypoint_2_b291e269",
+      "label": "Waypoint 2",
+      "local_bt": "locals/waypoint_2/main.xml",
+      "local_bt_files": [
+        "locals/waypoint_2/main.xml"
+      ],
+      "metadata": {
+        "coordinate_space": "map",
+        "linked_bt_tree": "locals/waypoint_2/main.xml",
+        "local_bt": "locals/waypoint_2/main.xml",
+        "local_bt_files": [
+          "locals/waypoint_2/main.xml"
+        ],
+        "source": "mission_canvas"
+      },
+      "pose": {
+        "frame_id": "map",
+        "x": -0.3423037968384731,
+        "y": 0.5546206372466551,
+        "yaw": -1.9670330152288762
+      }
+    }
+  ]
+}
