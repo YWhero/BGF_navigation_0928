@@ -27,7 +27,7 @@ Nav2 실행 경로와 ROS action 인터페이스는 이 저장소로 재현한�
 의존성은 ffw_robot_state_publisher / robotis_hand_pressure_broadcaster이다.
 `ffw_swerve_drive_controller`를 통째로 재빌드하지 않는다.
 
-전제: 같은 SH5 하드웨어/모터 ID/조향 영점, `/dev/follower` udev 설정,
+전제: Jetson/arm64의 같은 SH5 하드웨어/모터 ID/조향 영점, `/dev/follower` udev 설정,
 라이다 IP 192.168.6.3 및 192.168.6.4, 작동하는 `zenoh_daemon`, Docker Compose v2.
 `bgf_0923_3`는 같은 물리 장소에서만 사용할 수 있다. 다른 장소에서는 새 지도와 초기 위치를 지정한다.
 
@@ -40,7 +40,7 @@ cd BGF_navigation_0928
 ```
 
 비공개 저장소이므로 먼저 GitHub 인증이 필요하다. 실행 스크립트는 기존 `ai_worker`가 켜져 있으면
-중복 모터 제어를 막기 위해 종료한다. 해당 로봇의 기존 bringup을 종료한 뒤 실행한다.
+중복 모터 제어를 막기 위해 종료한다. 해당 로봇에서 `docker stop ai_worker`로 기존 컨테이너를 종료한 뒤 실행한다.
 `zenoh_daemon`은 계속 실행되어 있어야 한다. 스크립트는 nav/base를 시작하며 이동 목표는 보내지 않는다.
 
 이 최소 실행 경로는 navigation에 불필요한 카메라, 팔/손 시작 자세 이동을 생략한다.
